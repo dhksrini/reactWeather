@@ -28,6 +28,7 @@ body{
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 8px;
+    /* check heroku */
 }
 .app-logo{
     color: #fff;
