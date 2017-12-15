@@ -82,35 +82,37 @@ class SearchInput extends Component{
     render(){
         // console.log('search keyword', this.props)
         return (
-            <form onSubmit={this.onSearchSubmit}>
-                <div className="input-group">
-                    <input 
-                        type="text" 
-                        value={this.state.form} 
-                        className="form-control" 
-                        placeholder="Type cities" 
-                        onChange={ this.bindQuery }
-                    />
-                    <span className="input-group-btn">
-                        <button 
-                            className="btn btn-default" 
-                            type="submit" >Search</button>
-                    </span>
-                </div>
-                <div>
-                    {
-                        this.state.autoSuggestions.length >= 1 ? <ol className="autosuggest">
+            <form onSubmit={this.onSearchSubmit} className="searchWeatherForm">
+                <div className="stickFormHeader">
+                    <div className="input-group">
+                        <input 
+                            type="text" 
+                            value={this.state.form} 
+                            className="form-control" 
+                            placeholder="Type cities" 
+                            onChange={ this.bindQuery }
+                        />
+                        <span className="input-group-btn">
+                            <button 
+                                className="btn btn-primary" 
+                                type="submit" >Search</button>
+                        </span>
+                    </div>
+                    <div>
                         {
-                            this.state.autoSuggestions.map((value, index) => {
-                                return <li onClick={ () => this.onSelectList(value) } key={index}>{value}</li> 
-                            })
+                            this.state.autoSuggestions.length >= 1 ? <ol className="autosuggest">
+                            {
+                                this.state.autoSuggestions.map((value, index) => {
+                                    return <li onClick={ () => this.onSelectList(value) } key={index}>{value}</li> 
+                                })
+                            }
+                            </ol> : null
                         }
-                        </ol> : null
-                    }
+                    </div>
                 </div>
-                <div style={{padding: '10px', textTransform: 'capitalize'}}>
+                {/* <div style={{padding: '10px', textTransform: 'capitalize'}}>
                     <p>{this.state.form.length > 2 ?  <span><strong>Searching: </strong>{this.state.form}</span>  : null}</p>
-                </div>
+                </div> */}
             </form>
         );
     }

@@ -32,19 +32,21 @@ class ListWeather extends Component{
     }
     render(){
         return(
-            <table className="table table-hover">
-                <thead>
-                    <tr>
-                        <th>City</th>
-                        <th>Temprature</th>
-                        <th>Humidity</th>
-                        <th>Pressure</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.props.weather.map(this.renderWeather)}
-                </tbody>
-            </table>
+            <div className="weather-table">
+                <table className="table table-hover white">
+                    <thead>
+                        <tr>
+                            <th>City</th>
+                            <th>Temprature</th>
+                            <th>Humidity</th>
+                            <th>Pressure</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.props.weather.map(this.renderWeather)}
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }
