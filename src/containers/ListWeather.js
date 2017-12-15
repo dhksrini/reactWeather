@@ -7,7 +7,6 @@ class ListWeather extends Component{
     renderWeather(cityData){
         // @Todo : have to make average temprature
         // let percentageTemprature = temprature.map( temprature => _.ceil(temprature));
-        // console.log('percentageTemprature', percentageTemprature);
         let tempratureCollection = cityData.list.map(value => value.main.temp ),
             humidityCollection = cityData.list.map(value => value.main.humidity ),
             pressureCollection = cityData.list.map(value => value.main.pressure ),
