@@ -75,6 +75,8 @@ class SearchInput extends Component{
             this.setState({form: '', autoSuggestions: []});
         }
     }
+    // when click on auto suggestion list
+    // setState 
     onSelectList(event){
         this.props.fetchWeather(event);
         this.setState({autoSuggestions: [], form: ''})
